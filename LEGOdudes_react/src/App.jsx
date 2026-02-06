@@ -78,7 +78,7 @@ function App() {
 
   }
   
-    function Cart({isOpen}){
+    function Cart({isOpen, cart, setCart}){
       return(
         <section id="cart" className={isOpen ? "" : "hidden"}>
             <table id="cart-items">
