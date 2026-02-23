@@ -16,12 +16,12 @@ export default function Categories(){
     }
 
     useEffect(()=>{
-        getData
+        getData()
     }, [slug])
     return (
     <main>
         <h1>{slug}</h1>
-        {apiData?.map((item) => <CategoryCard key={item.name + 'xt'} name={item.name}/>)}
+        {apiData?.map((item) => <CategoryCard key={item.name + 'xt'} name={item.name} url={item.url}/>)}
     </main>
     )
 }

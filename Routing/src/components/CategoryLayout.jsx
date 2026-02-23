@@ -36,7 +36,7 @@ export default function CategoryLayout(){
             {/* spøsmålstegn betyr map ut hvis du finst, hvis det ikke finnes å du ikke har spørsmålstegn får du error */}
             {/*apiData?.map((item)=> <Link key={item.name+'-xt'} to={item.name} onClick={()=> setApiEndpoint(item.url)}>{item.name}</Link>)*/}
         </nav>
-        <Outlet context={{apiEndpoint, defaultApiUrl}}/>
+        <Outlet context={{apiEndpoint, defaultApiUrl, setApiEndpoint}}/>
         </>
     )
 }

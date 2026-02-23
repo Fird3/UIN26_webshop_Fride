@@ -3,12 +3,10 @@ import { useOutletContext, useParams } from "react-router-dom"
 
 export default function Category(){
     const {apiEndpoint, defaultApiUrl} = useOutletContext()
-
     const [apiData, setApiData] = useState([])
-
-    // Kan koble deg opp med URL, med å skrive det sammen i krøllparantesen som du skrev i path
+    const [spritesImg, setSpritesImg] = useState([])
     const {slug} = useParams()
-
+    // Kan koble deg opp med URL, med å skrive det sammen i krøllparantesen som du skrev i path
     console.log("Denne kommer fra Category", apiEndpoint)
 
     
@@ -19,13 +17,18 @@ export default function Category(){
 
     }
 
-    console.log("Denne kommer fra Categories", apiData)
+    console.log("Denne kommer fra Categories", apiData, apiEndpoint)
+
+    // console.log("Key values:", Object.keys(apiData?.sprites))
 
     console.log(apiData)
 
     useEffect(()=>{
         getSingleData()
+        // setSpritesImg(Object.keys(apiData?.sprites))
     },[slug])
+
+    console.log("mine bilder",spritesImg)
 
     return(
         <main>
