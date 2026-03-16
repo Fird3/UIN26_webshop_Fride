@@ -12,7 +12,7 @@ export default function Layout({children}){
                 <Link className="pokeball-logo" to="/"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="logo-ball" /> UIN POKEDEX</Link>
                 <Link to="teams">Teams</Link>
             </nav>
-            <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuerry} />
+            <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         </header>
         <Outlet context={{searchQuery}} />
         </>

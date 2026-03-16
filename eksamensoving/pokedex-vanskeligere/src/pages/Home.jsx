@@ -6,7 +6,7 @@ export default function Home(){
     const [pokemons, setPokemons] = useState()
     const [types, setTypes] = useState()
 
-    const getData = (url, set)=>{
+    const getData = async (url, set)=>{
         const response = await fetch(url)
         const data = await response.json()
         set(data.results)
@@ -20,7 +20,6 @@ export default function Home(){
       
     
     return (
-        <>
         <main>
             <PokemonList pokemons={pokemons} />
             <TypeList types={types} />

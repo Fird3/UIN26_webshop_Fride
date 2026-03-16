@@ -1,5 +1,7 @@
 import { useEffect } from "react"
+import { useState } from "react"
 import { useOutletContext } from "react-router-dom"
+import PokemonCard from "../components/PokemonCard"
 export default function SearchResults(){
     //I dette komponentet skal dere lagre verdiene som kommer fra søk og vise dem på siden. 
     //Dere skal gjennbruke pokemonkortene for å vise resultatene.
@@ -11,7 +13,7 @@ export default function SearchResults(){
         try{
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchQuery}`)
             const data = await res.json()
-            setSearchResults([data])
+            setSearchResults(data)
             console.log(data)
         
         }catch(err){
@@ -21,10 +23,22 @@ export default function SearchResults(){
 
     useEffect(()=>{
         getSearchResults();
-    },[])
+    },[searchQuery])
 
+    const pokemonDef = {
+        name: searchResults?.name,
+        id: searchResults?.id,
+        sprites: searchResults?.sprites
+
+    }
+
+
+    console.log("Sjekk", searchResults)
 
     return (
-        <h1>Search Results for: {searchQuery}</h1>
+        <main>
+            <h1>Search Results for: {searchQuery}</h1>
+            <PokemonCard pokemonDef={pokemonDef}/>
+        </main>
     )
 }

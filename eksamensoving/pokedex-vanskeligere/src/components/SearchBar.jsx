@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'   
-// import { useState } from 'react'
+import { useState } from 'react'
 import { redirect, useOutletContext } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 export default function SearchBar({searchQuery, setSearchQuery}){
